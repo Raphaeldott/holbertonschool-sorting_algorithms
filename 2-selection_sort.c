@@ -3,31 +3,37 @@
 #include "sort.h"
 
 /**
- * main - Entry point
- *
+ * selection_sort- function that sorts an array of integers in ascending order
+ *		using the Selection sort Algorithme
+ *@array: an array of integers
+ *@size: indicates table size array
  * Return: Always 0
  */
 
 void selection_sort(int *array, size_t size)
 {
-	size_t a, b, mini;
-	int temp;
+	size_t a, b, mini, temp;
 
 
-	for (a = 0; a < size - 1; a++)
+	for (a = 0; a < size; a++)
 	{
 		mini = a;
 
-		for (b = 0; b < size; b++)
+		for (b = a + 1; b < size; b++)
 		{
 			if (array[b] < array[mini])
 			{
 				mini = b;
-				temp = array[a];
-				array[a] = array[b];
-				array[b] = temp;
+
+				if (array[b] < array[mini])
+				{
+				}
 			}
-}
+		}
+			temp = array[a];
+			array[a] = array[mini];
+			array[mini] = temp;
 			print_array(array, size);
+		
 	}
 }
